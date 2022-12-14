@@ -4,6 +4,7 @@ pipeline {
         stage("build")  {
             steps {
                 echo 'building the application'
+                docker("")
             }
         }
         stage("test") {
