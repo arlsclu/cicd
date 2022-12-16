@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Println("hello world")
+	for {
+		<-time.Tick(3 * time.Second)
+		fmt.Printf("hello world  , nowt time is : %s ", time.Now())
+	}
+
 }
