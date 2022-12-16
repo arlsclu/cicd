@@ -1,13 +1,28 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('hello') {
             steps {
                 echo 'hello world'
-                sh 'ls /'
+                sh 'pwd'
                 sh 'uname -a'
-                sh 'ls -alh /var/jenkins_home/workspace/pipe_0'
             }
         }
+        stage('push image') {
+            steps {
+                sh 'ls'
+                sh 'docker build -t arlsclu/cicd:v0.01 .'
+            }
+        }
+        // stage('testing') {
+        //     agent {
+        //         docker {
+        //             image 'alpine:3.17'
+        //         }
+        //     }
+        //     steps {
+        //         /* */
+        //     }
+        // }
     }
 }

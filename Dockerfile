@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY go.mod .
 RUN go mod tidy
-COPY *.go .
+COPY *.go /app/
 RUN go build -o hello
 
 FROM alpine:latest
