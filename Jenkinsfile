@@ -6,6 +6,7 @@ pipeline {
                 echo 'hello world'
                 sh 'ls /'
                 sh 'uname -a'
+                sh 'ls -alh /var/jenkins_home/workspace/pipe_0'
             }
         }
     }
